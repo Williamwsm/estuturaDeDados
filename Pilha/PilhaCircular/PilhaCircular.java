@@ -46,8 +46,8 @@ public class PilhaCircular<T> {
         }
     }
 
-    public void topo(){
-        System.out.println("o topo da pilha é: "+fim);
+    public T topo(){
+       return fim;
     }
 
     public String imprimir(){
