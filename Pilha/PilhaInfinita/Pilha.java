@@ -45,7 +45,7 @@ public class Pilha <T>{
         if (pilhaVazia()) {
             return  null;
         }else {
-            return pilha[tamanho];
+            return pilha[tamanho-1];
         }
     }
 
