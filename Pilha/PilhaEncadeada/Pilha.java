@@ -44,9 +44,5 @@ public class Pilha <T> {
         return ultimo.elemento;
     }
 
-    public int tamanho() {
-        return tamanho;
-    }
-
 
 }
