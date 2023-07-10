@@ -6,7 +6,7 @@ public class Pilha <T> {
 
     public Pilha() {
         tamanho = 0;
-        ultimo.proximo = null;
+        ultimo.anterior = null;
     }
 
     public void empilhar(T elemento) {
@@ -15,7 +15,7 @@ public class Pilha <T> {
         if (pilhaVazia()) {
             ultimo = pilha;
         } else {
-            ultimo.proximo = pilha;
+            ultimo.anterior = ultimo;
             ultimo = pilha;
         }
         tamanho++;
@@ -31,7 +31,7 @@ public class Pilha <T> {
             System.out.println("Sua lista estar vazia");
 
         } else {
-            ultimo = ultimo.proximo;
+            ultimo = ultimo.anterior;
             tamanho--;
         }
     }
