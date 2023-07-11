@@ -6,18 +6,18 @@ public class Pilha <T>{
 
     public Pilha(){
         tamanho = 0;
-        ultimo.proximo= null;
+        ultimo.anterior= null;
     }
 
     public void empilhar(T dado){
         No <T> pilha = new No<>();
         pilha.dado = dado;
         if (pilhaVazia()){
-            pilha.proximo =  pilha; // aponta para ele msm
+            ultimo = pilha; // aponta para ele msm
         }else {
-            pilha.proximo = ultimo.proximo = pilha; // aponta para apos o topo
+            ultimo.anterior = ultimo; // aponta para apos o topo
+            ultimo = pilha;
         }
-        ultimo = pilha; //o no se torna o topo
         tamanho++;
     }
     public void desempilhar(){
@@ -27,7 +27,7 @@ public class Pilha <T>{
             ultimo = null;
             System.out.println("pilha vazia");
         }else{
-            ultimo = ultimo.proximo.proximo;// o topo aponta para o proximo apos o topo
+            ultimo = ultimo.anterior;// o topo aponta para o proximo apos o topo
         }
         tamanho--;
     }
